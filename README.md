@@ -1,2 +1,2 @@
-# resume-project
-M1: Final Assignment
+# my-resume
+M1.1: BASIC HTML,CSS FINAL PROJECT
