@@ -1,3 +1,4 @@
+/* INITIAL SETUPS */
 :root {
   box-sizing: border-box;
 }
@@ -9,15 +10,45 @@
 body {
   font-family: "Work Sans", sans-serif;
 }
-html {
+/* html {
   overflow-x: hidden;
-}
+} */
 p {
   margin: 0;
 }
-/* HEADER STARTS HERE */
+section {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100vh;
+  padding: 20vh 50px 20vh 75px;
+}
+/* KET-VISUAL % ELEMENTS */
+.keyvisual-02 {
+  height: 100px;
+}
+.keyvisual-01 {
+  position: absolute;
+  width: 80px;
+  right: 30px;
+  top: 20px;
+}
 
-/* *sidebar 1st version */
+.keyvisual-03 {
+  position: fixed;
+  width: 45vw;
+  right: -12vw;
+  bottom: -15vw;
+  z-index: 0;
+  opacity: 0.25;
+}
+.element {
+  height: 3vw;
+}
+.element-03 {
+  height: 45vw;
+}
+/* SIDEBAR STARTS HERE */
 .sidebar {
   position: fixed;
   top: 0;
@@ -65,70 +96,17 @@ p {
   color: rgba(0, 0, 0, 0.3);
 }
 
-/* *sidebar 2nd version
-.sidebar {
-  background-color: #f6f6f6;
-  width: 100%;
-  transform: rotate(-90deg);
-  transform-origin: top right;
-  position: fixed;
-  right: 100%;
-  top: 0;
-}
-
-.sidebar-dashline {
-  border-bottom: 1.5px dashed rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 50px;
-  align-items: flex-end;
-  position: relative;
-  right: 100vw;
-}
-.head-bar {
-  position: relative;
-  padding-left: 50px;
-  color: rgba(0, 0, 0, 0.5);
-  font-weight: 300;
-}
-.tail-bar {
-  position: relative;
-  left: 600px;
-  padding-right: 600x;
-  width: 400px;
-  text-align: center;
-  display: flex;
-  justify-content: space-between;
-}
-.tail-bar-text {
-  text-decoration: none;
-  color: rgba(0, 0, 0, 0.3);
-  font-weight: 300;
-} */
 /* SECTION #0 STARTS HERE */
 
-section {
-  position: relative;
-  display: flex;
-  flex-flow: column nowrap;
-  min-height: 60vh;
-  height: auto;
-  padding: 20vh 50px 20vh 75px;
+.home-link {
+  text-decoration: none;
+  font-size: 18x;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 /* TITLE */
-.home .keyvisual-01 {
-  position: absolute;
-  width: 5vw;
-  right: 30px;
-  top: 20px;
-}
-.home .keyvisual-03 {
-  position: absolute;
-  width: 40vw;
-  right: -10vw;
-}
+
 .home-title {
   display: flex;
   align-items: flex-start;
@@ -136,60 +114,50 @@ section {
 }
 .heading {
   color: rgba(0, 0, 0, 0.3);
-  font-size: 2vw;
+  font-size: 14px;
   font-weight: 200;
   margin: 0;
 }
 .sub-heading {
-  font-size: 5vw;
+  font-size: 36px;
   margin: 0;
   font-weight: 700;
 }
 .separate-line {
-  width: 3vw;
-  background-color: rgba(0, 0, 0, 0.5);
-  text-align: left;
+  width: 30px;
   margin-left: 0;
+  border: 0.1px solid lightgray;
 }
-
 .home-content {
-  color: rgba(0, 0, 0, 0.5);
+  margin-top: 80px;
+}
+.home-portfolio,
+.home-contact {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-top: 5vw;
-  font-size: 1vw;
-  font-weight: 200;
-}
-.home-content h1 {
-  font-size: 1vw;
-  font-weight: 300;
+  margin-top: 15px;
 }
 
 /* SECTION #1 STARTS HERE */
-.keyvisual-02 {
-  height: 12vw;
-}
 .about-me {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
+
 .right-side {
   width: 50%;
 }
 .p-01 {
-  font-size: 3vw;
+  font-size: 28px;
   font-weight: 700;
+  padding: 50px 0;
 }
 .p-02 {
-  font-size: 1.5vw;
+  font-size: 15px;
   font-weight: 300;
-}
-
-.element {
-  height: 3vw;
 }
 .skills-heading {
   font-size: 2vw;
@@ -201,16 +169,66 @@ section {
 }
 
 /* SECTION #2 STARTS HERE */
-.element-03 {
-  height: 45vw;
-}
+
 .portfolio {
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* justify-content: space-between; */
 }
-.contact-box {
+.portfolio .left-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.portfolio .p-01,
+.portfolio .p-02 {
+  text-align: end;
+}
+
+/* SECTION #3 STARTS HERE */
+.contact {
+  height: 70vh;
+  margin: 50px 0;
+}
+.contact-detail {
   font-size: 1.5vw;
   font-weight: 300;
+  margin: 50px 0;
+}
+.contact-detail p {
+  margin: 10px 0;
+}
+/* MOBILE MODIFICATION */
+
+@media screen and (max-width: 450px) {
+  .about-me,
+  .portfolio {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .p-01 {
+    font-size: 18px;
+  }
+  .about-me .right-side {
+    width: 100%;
+  }
+
+  .about-me .skills-heading {
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .about-me .skills-title {
+    font-size: 15px;
+    font-weight: 300;
+  }
+  .portfolio .right-side .element-03 {
+    padding-top: 45px;
+    height: 35vh;
+  }
+  .contact-detail p {
+    font-size: 15px;
+    font-weight: 300;
+  }
 }
